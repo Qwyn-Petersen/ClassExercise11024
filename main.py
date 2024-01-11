@@ -1,28 +1,24 @@
 def wrapper():
-  a = 3
-  n = int(input("Please enter a number: "))
+  a = 1
+  n = int(input("Please enter the # of interations: "))
   sign = 1
-  dog = sign * (1/a)
+  term = sign * (1/a)
 
-  if n <= a:
-    print("Please give a number greater than 3")
-    return 0
+  return find_term(a,n,term,sign)
 
-  return find_dog(a,n,dog,sign)
-
-def find_dog(a,n,dog,sign):
+def find_term(a,n,term,sign):
   
-  while a < n:
+  if a < n:
     a += 2
     sign *= -1
-    dog += (sign * (1/a))
-    print(dog)
-    return find_dog(a,n,dog,sign)
+    term += (sign * (1/a))
+    print(term)
+    return find_term(a,n,term,sign)
 
-  return dog 
+  return term 
 
 def main():
-  pi = 4 / (1 + wrapper())
+  pi = 4 * wrapper()
   print(pi)
   return
   
