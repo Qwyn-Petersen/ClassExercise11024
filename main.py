@@ -1,22 +1,32 @@
-def add_dog(n,dog):
-  
-  pi = 1
-  
-  if n > 1000: 
-      pi = 4 / 1 + dog
-      return pi
-  else:
-    dog += dog / (2 + n^2)
-    n += 2
-    add_dog(n,a)
-    
-def main():
-  n = 3
-  dog = 1/(2+3^2)
-  result = add_dog(n,dog)
-  print(result)
+def wrapper():
+  a = 3
+  n = int(input("Please enter a number: "))
+  sign = 1
+  dog = sign * (1/a)
 
+  if n <= a:
+    print("Please give a number greater than 3")
+    return 0
+
+  return find_dog(a,n,dog,sign)
+
+def find_dog(a,n,dog,sign):
+  
+  while a < n:
+    a += 2
+    sign *= -1
+    dog += (sign * (1/a))
+    print(dog)
+    return find_dog(a,n,dog,sign)
+
+  return dog 
+
+def main():
+  pi = 4 / (1 + wrapper())
+  print(pi)
+  return
+  
 if __name__=="__main__":
-  main()
+    main()
   
   
